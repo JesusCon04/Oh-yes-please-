@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oh yes please - Boutique Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #fff;
+            border-bottom: 2px solid #222;
+            text-align: center;
+            padding: 40px 0 24px 0;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+        header img {
+            height: 120px;
+            margin-bottom: 0;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 2px solid #eee;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 18px 0 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            color: #111;
+            text-decoration: none;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 22px;
+            border-radius: 24px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        nav a:hover, nav a.active {
+            background: #111;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .boutique-container {
+            max-width: 700px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 48px 32px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .boutique-container p {
+            font-size: 1.2rem;
+            color: #222;
+            line-height: 1.7;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+        footer {
+            background: #fff;
+            color: #111;
+            text-align: center;
+            padding: 18px 0 10px 0;
+            border-top: 2px solid #222;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: 48px;
+        }
+        .banner {
+            width: 100%;
+            min-height: 320px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .banner-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/banner-bg.jpg') center center/cover no-repeat;
+            filter: brightness(0.5) blur(1.5px);
+            z-index: 1;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #fff;
+            text-align: center;
+        }
+        .banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7rem;
+            margin: 0 0 12px 0;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        .banner p {
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        .banner-btn {
+            background: #fff;
+            color: #111;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 1.15rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: background 0.2s, color 0.2s;
+            border: 2px solid #fff;
+        }
+        .banner-btn:hover {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+        @media (max-width: 600px) {
+            header img {
+                height: 80px;
+            }
+            .boutique-container {
+                padding: 24px 8px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            .banner {
+                min-height: 180px;
+                padding: 18px 0;
+            }
+            .banner h2 {
+                font-size: 1.3rem;
+            }
+            .banner-content {
+                padding: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo oh yes please">
+    </header>
+    <nav>
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="Ubicacion.html">Ubicación</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="boutique-container" id="inicio">
+        <p>Bienvenido a tu boutique favorita. Descubre la gran variedad de productos que tenemos para ofrecerte a través de nuestro catálogo digital.</p>
+    </div>
+    <footer>
+        &copy; 2025 oh yes please. Todos los derechos reservados. (No contamos con ventas en línea)
+    </footer>
+</body>
+</html>

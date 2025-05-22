@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - oh yes please</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .ubicacion-container {
+            max-width: 700px;
+            margin: 48px auto;
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            border: 1px solid #222;
+        }
+        .ubicacion-container img {
+            height: 80px;
+            margin-bottom: 18px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            background: #fff;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #111;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+        .direccion {
+            font-size: 1.18rem;
+            color: #222;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+        .horarios {
+            margin: 18px 0 12px 0;
+            color: #111;
+            font-size: 1.08rem;
+            background: #f5f5f5;
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .contactos {
+            margin: 22px 0 18px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .contactos a, .contactos span {
+            font-size: 1.08rem;
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contactos a:hover {
+            color: #fff;
+            background: #111;
+            padding: 2px 8px;
+            border-radius: 8px;
+        }
+        .btn-maps {
+            display: inline-block;
+            margin: 18px 0 24px 0;
+            background: #111;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            border: 2px solid #111;
+        }
+        .btn-maps:hover {
+            background: #fff;
+            color: #111;
+            border: 2px solid #111;
+        }
+        iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            margin-bottom: 18px;
+        }
+        .social {
+            margin: 18px 0 0 0;
+        }
+        .social a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: #111;
+            transition: color 0.2s;
+        }
+        .social a:hover {
+            color: #fff;
+            background: #111;
+            border-radius: 50%;
+            padding: 4px 8px;
+        }
+        .btn-volver {
+            display: inline-block;
+            margin-top: 18px;
+            background: #111;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            border: 2px solid #111;
+        }
+        .btn-volver:hover {
+            background: #fff;
+            color: #111;
+            border: 2px solid #111;
+        }
+        @media (max-width: 700px) {
+            .ubicacion-container {
+                padding: 18px 6px;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .horarios, .contactos a, .contactos span {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ubicacion-container">
+        <img src="logo.jpg" alt="Logo oh yes please">
+        <h2>Ubicación</h2>
+        <div class="direccion">
+            Periférico Norte y Gral. Yañez #117, Hermosillo, Sonora, México
+        </div>
+        <div class="horarios">
+            <strong>Horarios de atención:</strong><br>
+            Lunes a Sábado: 10:00 am - 8:00 pm<br>
+            Domingo: 11:00 am - 3:00 pm<br>
+            Miércoles: Cerrado
+        </div>
+        <div class="contactos">
+            <span><strong>Teléfono:</strong> <a href="tel:6442019164">644 201 9164</a></span>
+            <a href="https://wa.me/526442019164?text=Hola,%20¿me%20puedes%20dar%20indicaciones%20para%20llegar%20a%20la%20tienda?" target="_blank">
+                Escríbenos por WhatsApp
+            </a>
+        </div>
+        <a href="https://maps.app.goo.gl/wBjg1RTdZ2MhgKVJ7" target="_blank" class="btn-maps">
+            Abrir en Google Maps
+        </a>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.8640109900816!2d-110.9626688244399!3d29.10969587540755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce870062294731%3A0xb787617d80d3a5a4!2sLuna%20Concept%20store%20y%20vestidos!5e0!3m2!1ses-419!2smx!4v1747423220919!5m2!1ses-419!2smx" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="social">
+            <!-- Aquí puedes agregar iconos/redes si lo deseas -->
+        </div>
+        <a href="index.html" class="btn-volver">Volver al inicio</a>
+    </div>
+</body>
+</html>

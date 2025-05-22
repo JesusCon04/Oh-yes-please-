@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Playeras - oh yes please</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .catalogo-container {
+            max-width: 1100px;
+            margin: 48px auto;
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            border: 1px solid #222;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #111;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .producto {
+            background: #fafafa;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 18px 10px 24px 10px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .producto:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .producto img {
+            width: 100%;
+            max-width: 180px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .producto h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            color: #111;
+        }
+        .producto p {
+            margin: 0;
+            color: #555;
+            font-size: 1rem;
+        }
+        .btn-volver, .btn-categoria {
+            background: #111;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            border: 2px solid #111;
+            margin: 8px 4px;
+            display: inline-block;
+        }
+        .btn-volver:hover, .btn-categoria:hover, .btn-categoria.active {
+            background: #fff;
+            color: #111;
+            border: 2px solid #111;
+        }
+        nav {
+            margin-bottom: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        @media (max-width: 700px) {
+            .catalogo-container {
+                padding: 18px 6px;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .productos {
+                gap: 16px;
+            }
+        }
+        .modal-img-bg {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-img-bg.active {
+            display: flex;
+        }
+        .modal-img-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 18px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+            background: #fff;
+            padding: 10px;
+            position: relative;
+            animation: modalShow 0.2s;
+        }
+        .modal-img-content img {
+            max-width: 80vw;
+            max-height: 80vh;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-img-close {
+            position: absolute;
+            top: 8px;
+            right: 18px;
+            font-size: 2rem;
+            color: #111;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: background 0.2s;
+        }
+        .modal-img-close:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="catalogo-container">
+        <h2>Catálogo de Playeras</h2>
+        <!-- Menú de categorías -->
+        <nav>
+            <a href="catalogo_playeras.html" class="btn-categoria active">Playeras</a>
+            <a href="catalogo_bolsas.html" class="btn-categoria">Bolsas</a>
+            <a href="catalogo_maquillaje.html" class="btn-categoria">Maquillaje</a>
+            <a href="catalogo_zapatos.html" class="btn-categoria">Zapatos</a>
+            <a href="catalogo_gorras.html" class="btn-categoria">Gorras</a>
+        </nav>
+        <div class="productos">
+            <div class="producto">
+                <a href="playera1.jpg" class="img-link">
+                    <img src="playera1.jpg" alt="Playera básica blanca">
+                </a>
+                <h3>Playera Deportiva Under Armour</h3>
+                <p>Talla L $400 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera2.jpg" class="img-link">
+                    <img src="playera2.jpg" alt="Playera Deportiva Adidas Turquesa">
+                </a>
+                <h3>Playera Deportiva Adidas Turquesa</h3>
+                <p>Talla L $400 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera3.jpg" class="img-link">
+                    <img src="playera3.jpg" alt="Playera Deportiva Adidas Negra">
+                </a>
+                <h3>Playera Deportiva Adidas Negra</h3>
+                <p>Talla XL $350 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera4.jpg" class="img-link">
+                    <img src="playera4.jpg" alt="Playera Manga Larga Columbia">
+                </a>
+                <h3>Playera Manga Larga Columbia</h3>
+                <p>Talla L $450 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera5.jpg" class="img-link">
+                    <img src="playera5.jpg" alt="Playera Blanca Columbia">
+                </a>
+                <h3>Playera Blanca Columbia</h3>
+                <p>Talla L $350 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera6.jpg" class="img-link">
+                    <img src="playera6.jpg" alt="Playera Roja Champion">
+                </a>
+                <h3>Playera Roja Champion</h3>
+                <p>Talla L $350 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera7.jpg" class="img-link">
+                    <img src="playera7.jpg" alt="Playera Deportiva Adidas Gris">
+                </a>
+                <h3>Playera Deportiva Adidas Gris</h3>
+                <p>Talla L $450 Mxn</p>
+            </div>
+            <div class="producto">
+                <a href="playera8.jpg" class="img-link">
+                    <img src="playera8.jpg" alt="Playera Blanca Y Negra Puma">
+                </a>
+                <h3>Playera Blanca Y Negra Puma</h3>
+                <p>Talla L $450 Mxn</p>
+            </div>
+        </div>
+        <a href="index.html" class="btn-volver">Volver al inicio</a>
+    </div>
+
+    <!-- Modal para imagen grande -->
+    <div class="modal-img-bg" id="modalImg">
+        <div class="modal-img-content">
+            <button class="modal-img-close" id="closeModalImg" title="Cerrar">&times;</button>
+            <img src="" alt="Vista grande" id="modalImgBig">
+        </div>
+    </div>
+    <script>
+        // Modal de imagen elegante
+        document.querySelectorAll('.img-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('modalImgBig').src = this.href;
+                document.getElementById('modalImg').classList.add('active');
+            });
+        });
+        document.getElementById('closeModalImg').onclick = function() {
+            document.getElementById('modalImg').classList.remove('active');
+            document.getElementById('modalImgBig').src = "";
+        };
+        document.getElementById('modalImg').onclick = function(e) {
+            if(e.target === this) {
+                this.classList.remove('active');
+                document.getElementById('modalImgBig').src = "";
+            }
+        };
+    </script>
+</body>
+</html>
